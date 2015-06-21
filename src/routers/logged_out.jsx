@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, DefaultRoute, RouteHandler } from "react-router";
 
-import LandingPage from "../pages/landing/page";
+import TodoMvcPage from "../pages/todomvc/page";
 
 
 export default class LoggedOutRouter extends React.Component {
@@ -17,8 +17,10 @@ export default class LoggedOutRouter extends React.Component {
 
   static getRoutes = function() {
     return (
-      <Route name="app" path="/" handler={LoggedOutRouter}>
-        <DefaultRoute name="landing" handler={LandingPage} />
+      <Route name="app" handler={LoggedOutRouter}>
+        <Route path="/" handler={TodoMvcPage} />
+        <Route path="/active" handler={TodoMvcPage} />
+        <Route path="/completed" handler={TodoMvcPage} />
       </Route>
     );
   }

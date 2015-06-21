@@ -2,13 +2,15 @@ import React from "react";
 import { getData } from "../../common/request";
 
 
-export default class LandingPage extends React.Component {
+export default class TodoMvcPage extends React.Component {
   componentWillMount() {
-    console.log("[LandingPage] will mount with server response: ", this.props.data.landing);
+    //console.log("[LandingPage] will mount with server response: ", this.props.data.landing);
   }
 
   render() {
-    let { title } = this.props.data.landing;
+    var title = 'TodoMVC';
+
+    console.log(this.props);
 
     return (
       <div id="landing-page">
@@ -21,3 +23,5 @@ export default class LandingPage extends React.Component {
     return getData("/landing");
   }
 }
+
+

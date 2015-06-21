@@ -23,6 +23,14 @@ app.get('/app.js', function(req, res) {
   }
 });
 
+app.get('/node_modules/todomvc-app-css/index.css', function(req, res) {
+  res.sendFile(__dirname + '/node_modules/todomvc-app-css/index.css');
+});
+
+app.get('/node_modules/todomvc-common/base.css', function(req, res) {
+  res.sendFile(__dirname + '/node_modules/todomvc-common/base.css');
+});
+
 // Serve index page
 app.get('*', function(req, res) {
   res.sendFile(__dirname + '/build/index.html');
